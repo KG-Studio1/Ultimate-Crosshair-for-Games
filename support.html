@@ -37,43 +37,21 @@
         <button class="button">Click to Chat Support</button>
     </a>
 
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-
-    var isInWebView2 = typeof window.chrome !== 'undefined' &&
-                       typeof window.chrome.webview !== 'undefined';
-
-    function notifyApp(type) {
-        if (isInWebView2) {
-            window.chrome.webview.postMessage(JSON.stringify({ type: type }));
-        }
-    }
-
-    // 1. تسجيل الأحداث خارج onLoad
-    Tawk_API.onChatMessageAgent = function(message) {
-        notifyApp('tawk_agent_message');
-    };
-
-    Tawk_API.onUnreadCountChanged = function(count) {
-        if (count > 0) {
-            notifyApp('tawk_unread');
-        }
-    };
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/690511767909cc195310938c/1j8tsoe57';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
 
     Tawk_API.onLoad = function() {
         Tawk_API.maximize();
         Tawk_API.hideWidget = function() {};
-        notifyApp('tawk_ready');
     };
-
-    (function() {
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/690511767909cc195310938c/1j8tsoe57';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
-    })();
-</script>
+    </script>
 </body>
 </html>
