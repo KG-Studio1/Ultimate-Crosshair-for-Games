@@ -37,31 +37,21 @@
         <button class="button">Click to Chat Support</button>
     </a>
 
-<script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
-        var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-        s1.async = true;
-        s1.src = 'https://embed.tawk.to/690511767909cc195310938c/1j8tsoe57';
-        s1.charset = 'UTF-8';
-        s1.setAttribute('crossorigin', '*');
-        s0.parentNode.insertBefore(s1, s0);
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/690511767909cc195310938c/1j8tsoe57';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
     })();
 
     Tawk_API.onLoad = function() {
         Tawk_API.maximize();
         Tawk_API.hideWidget = function() {};
     };
-
-    // الحدث الذي يتم استدعاؤه عند وصول رسالة من الوكيل
-    Tawk_API.onChatMessageAgent = function(message) {
-        // التحقق من وجود WebView2 قبل الإرسال
-        if (window.chrome && window.chrome.webview) {
-            window.chrome.webview.postMessage("NewSupportMessage");
-        } else {
-            console.log("WebView2 environment not found.");
-        }
-    };
-</script>
+    </script>
 </body>
 </html>
