@@ -37,7 +37,7 @@
         <button class="button">Click to Chat Support</button>
     </a>
 
-    <script type="text/javascript">
+  <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
     (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -52,6 +52,13 @@
         Tawk_API.maximize();
         Tawk_API.hideWidget = function() {};
     };
-    </script>
+
+    // الحدث الجديد: التقاط رسائل الدعم الفني وإرسالها إلى تطبيق WinUI 3
+    Tawk_API.onChatMessageAgent = function(message){
+        if (window.chrome && window.chrome.webview) {
+            window.chrome.webview.postMessage("NewSupportMessage");
+        }
+    };
+</script>
 </body>
 </html>
